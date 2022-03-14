@@ -1,0 +1,86 @@
+.container {
+    position: relative;
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0; right: 0; left: 0;
+    min-height: 100vh;
+    z-index: -1;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url("../images/pexels-artem-beliaikin-1036856.jpg");
+    background-size: cover;
+}
+
+.unauth_page_body {
+    margin-top: 10vh;
+    min-height: 90vh;
+    color: #fff;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    letter-spacing: 0.1em;
+    padding: 1.25em;
+}
+
+.unauth_page_body > p {
+    margin-bottom: 1.2em;
+}
+.unauth_page_body__title {
+    font-size: 4rem;
+    font-weight: 600;
+    transition: transform 1s ease;
+}
+.unauth_page_body__title.push_down {
+    transform: translateX(-100vw);
+}
+
+.unauth_page_body__catchy_line {
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+.unauth_page_body__dealing_line {
+    font-size: 2rem;
+    font-weight: 600;
+}
+.shop_now {
+    min-width: clamp(200px, 70vw, 500px);
+    font-weight: 500;
+    font-size: 2rem;
+    margin: 2rem auto 6rem auto;
+    cursor: pointer;
+    padding: 1em 3em;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    background-color: #fff;
+    color: #000;
+    transition: background-color 0.2s ease;
+}
+.shop_now:hover, .shop_now:focus {
+    /* background-color: #cec5c5; */
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+/* .scroll_button {
+    cursor: pointer;
+    border: 2px solid #fff;
+    border-radius: 15px;
+    width: 40px; height: 60px;
+    margin: 0 auto;
+}
+.scroll_button div {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #fff;
+    margin: 10px auto;
+    animation: move 1s infinite alternate;
+}
+
+@keyframes move {
+    to { transform: translateY(10px); }
+} */

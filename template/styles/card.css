@@ -1,0 +1,32 @@
+.card {
+    cursor: pointer;
+    max-width: 400px;
+    box-shadow: #959da533 0px 8px 24px;
+    height: fit-content;
+}
+
+.card_image {
+    width: 100%;
+}
+
+.card_title {
+    font-weight: 600;
+    font-size: 2.2rem;
+    margin: 10px;
+}
+
+.ratings {
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+.ratings p {
+    margin-left: 10px;
+}
+
+.price {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 10px;
+}

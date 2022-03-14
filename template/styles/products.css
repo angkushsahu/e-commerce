@@ -1,0 +1,9 @@
+.products {
+    min-height: 90vh;
+    margin-top: 10vh;
+    padding: 1.5em;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 18em);
+    grid-gap: 2em;
+    justify-content: center;
+}
