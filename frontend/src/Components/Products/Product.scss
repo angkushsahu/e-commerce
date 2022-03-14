@@ -1,0 +1,39 @@
+.card {
+    cursor: pointer;
+    box-shadow: #64646f33 0px 7px 29px 0px;
+    height: fit-content;
+    text-decoration: none;
+    color: #000;
+    transition: transform 0.4s ease;
+
+    &:hover {
+        transform: scale(1.04);
+    }
+
+    &_image {
+        width: 100%;
+    }
+
+    &_title {
+        font-weight: 600;
+        font-size: 2.2rem;
+        margin: 1rem;
+    }
+
+    .ratings {
+    //     font-size: 1.8rem;
+        display: flex;
+        align-items: center;
+        margin: 1rem;
+
+        & > span {
+            margin-left: 1rem;
+        }
+    }
+
+    .price {
+        font-size: 2rem;
+        font-weight: 600;
+        margin: 1rem;
+    }
+}

@@ -1,0 +1,58 @@
+.products {
+    min-height: 90vh;
+    margin-top: 10vh;
+    padding: 1.5em;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, clamp(18.75em, 48vw, 25em));
+    grid-gap: 3em;
+    justify-content: center;
+}
+
+.paginationBox {
+    display: flex;
+    justify-content: center;
+    margin: 3.5em;
+
+    .pagination {
+        display: flex;
+        justify-content: center;
+        padding: 0;
+
+        .page-item {
+            background-color: #fff;
+            list-style: none;
+            border: 1px solid rgba(0, 0, 0, 0.178);
+            padding: 1em 1.5em;
+            transition: 0.3s;
+            cursor: pointer;
+
+            &:first-child {
+                border-radius: 5px 0 0 5px;
+            }
+            &:last-child {
+                border-radius: 0 5px 5px 0;
+            }
+            &:hover {
+                background-color: rgb(230, 230, 230);
+
+                .page-link {
+                    color: rgb(80, 80, 80);
+                }
+            }
+        }
+
+        .page-link {
+            text-decoration: none;
+            color: rgb(80, 80, 80);
+            transition: background-color 0.2s;
+        }
+
+        .pageItemActive {
+            background-color: tomato;
+        }
+
+        .pageLinkActive {
+            color: #fff;
+        }
+    }
+}

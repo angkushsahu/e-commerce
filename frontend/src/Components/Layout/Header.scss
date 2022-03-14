@@ -1,0 +1,110 @@
+.dShow { display: flex; }
+.dNone { display: none; }
+
+.header {
+    font-size: 1.6rem;
+    box-shadow: #959da533 0px 8px 24px;
+    min-height: 10vh;
+    display: grid;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    grid-template-areas: "logo nav nav user";
+    padding: 0 3.125em;
+    background-color: #fff;
+    z-index: 2;
+
+    .logo {
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+        font-size: 2rem;
+        grid-area: logo;
+
+        &_header { cursor: pointer; }
+    }
+
+    .nav {
+        grid-area: nav;
+        min-width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+
+        li {
+            list-style-type: none;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+
+            &:hover, &:focus {
+                transform: scale(1.05);
+                font-weight: 500;
+            }
+        }
+
+        @media screen and (max-width: 50em) {
+            flex-direction: column;
+            position: absolute;
+            top: 10vh;
+            right: -100%;
+            transition: right 1s ease;
+            z-index: 1;
+            background-color: #fff;
+            box-shadow: #959da533 0px 8px 24px;
+            transition: right 0.5s ease;
+
+            &.right {
+                right: 0;
+            }
+
+            & li {
+                margin: 10px 0;
+            }
+        }
+    }
+
+    .user {
+        grid-area: user;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+
+        img {
+            cursor: pointer;
+            width: clamp(20px, 2vw, 30px);
+            transition: transform 0.4s ease;
+
+            &:focus, &:hover {
+                transform: scale(1.1);
+            }
+        }
+
+        & > img + img {
+            margin-left: 2rem;
+        }
+    }
+
+    .hamburger {
+        grid-area: hamburger;
+        display: none;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            width: 30px;
+            cursor: pointer;
+        }
+
+        @media screen and (max-width: 50em) {
+            display: flex;
+        }
+    }
+
+    @media screen and (max-width: 50em) {
+        grid-template-areas: "logo user user hamburger";
+        padding: 0 0 0 20px;
+
+        .logo {
+            font-size: 1.4rem;
+        }
+    }
+}
