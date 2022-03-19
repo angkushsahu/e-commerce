@@ -13,13 +13,16 @@ exports.createProduct = catchAsyncErrors(async function(req, res) {
 // Get all products
 exports.getAllProducts = catchAsyncErrors(async function(req, res, next) {
     // return next(new ErrorHandler("This is my temporary error", 500));
-    // const resultPerPage = 20;
-    const resultPerPage = 3;
+    const resultPerPage = 8;
     const productsCount = await Product.countDocuments();
-    console.log(req.query);
+    // let apiFeature = new ApiFeatures(Product.find(), req.query).search().filter();
     const apiFeature = new ApiFeatures(Product.find(), req.query).search().filter().pagination(resultPerPage);
     const products = await apiFeature.query;
-    res.status(200).json({ success: true, products, productsCount, resultPerPage });
+    // let products = await apiFeature.query;
+    let filteredProductsCount = products.length;
+    // apiFeature.pagination(resultPerPage);
+    // products = await apiFeature.query;
+    res.status(200).json({ success: true, products, productsCount, resultPerPage, filteredProductsCount });
 });
 
 // Get Product Details
