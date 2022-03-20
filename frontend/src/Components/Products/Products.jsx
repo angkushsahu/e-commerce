@@ -5,8 +5,8 @@ import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import Loader from "../Layout/Loader.jsx";
 import { ToastContainer, toast } from "react-toastify";
-import Pagination from "react-js-pagination";
 import "react-toastify/dist/ReactToastify.css";
+import Pagination from "react-js-pagination";
 import Slider from "@material-ui/core/Slider";
 import Typography from "@material-ui/core/Typography";
 

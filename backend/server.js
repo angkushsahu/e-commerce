@@ -12,6 +12,13 @@ require("dotenv").config({ path: "./backend/config.env" });
 require("./database/database.js");      // Connecting to database
 const app = require("./app.js");
 
+const cloudinary = require("cloudinary");
+cloudinary.config({
+    cloud_name: process.env.CLOUDINARY_NAME,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET
+});
+
 const server = app.listen(process.env.PORT, function() {
     console.log(`App listening at http://localhost:${process.env.PORT}/`);
 })

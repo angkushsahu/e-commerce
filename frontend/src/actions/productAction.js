@@ -13,10 +13,10 @@ export const getProduct = (keyword = "", currentPage = 1, price = [0, 25000], ca
         const res = await fetch(link);
         const data = await res.json();
 
-        dispatch({
-            type: ALL_PRODUCT_SUCCESS,
-            payload: data
-        });
+        if (data.success)
+            dispatch({ type: ALL_PRODUCT_SUCCESS, payload: data });
+        else
+            dispatch({ type: ALL_PRODUCT_FAIL, payload: "Internal server error" });
     } catch(error) {
         dispatch({
             type: ALL_PRODUCT_FAIL,
@@ -35,10 +35,7 @@ export const getProductDetails = function(id) {
             const res = await fetch(`http://localhost:4000/api/v1/product/${id}`);
             const data = await res.json();
 
-            dispatch({
-                type: PRODUCT_DETAILS_SUCCESS,
-                payload: data.product
-            });
+            dispatch({ type: PRODUCT_DETAILS_SUCCESS, payload: data.product });
         } catch(error) {
             dispatch({
                 type: PRODUCT_DETAILS_FAIL,
